@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulario de cadastro</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilo.css"/>		
+		<script language="javascript" src="funcoes.js"></script>
+			
+		
+	</head>
+	
+	<body>	
+		<table border="1" id="formTabela">
+			<tr>
+				<td width="800" colspan="3" align="center">Cadastro de Clientes</td>
+			</tr>
+			<tr>
+				<td width="250">CPF:</td>
+				<td width="550"><input type="text" name="cpf" id="txtCpf" size="14" maxlength="14" onkeypress="return soNumero()"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Nome:</td>
+				<td width="550"><input type="text" name="nome" id="txtNome" size="80" onkeypress=" return soLetras()" onkeyup="maiusculas()"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Endereço:</td>
+				<td width="550"><input type="text" name="endereco" id="txtEndereco" size="80" onkeyup="maiusculas()"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Cidade:</td>
+				<td width="550"><input type="text" name="cidade" id="txtCidade" size="50" onkeyup="maiusculas()"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Sexo:</td>
+				<td width="550">
+				<select id="sltSexo">
+				<option value="Escolher Sexo">Escolher Sexo</option>
+				<option value="Masculino">Masculino</option>
+				<option value="Feminino">Feminino</option>
+				</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250">Telefone:</td>
+				<td width="550"><input type="text" name="telefone" id="txtTelefone" size="70"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">E-mail(Login)</td>
+				<td width="550"><input type="mail" name="email" id="txtEmail" size="70"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Senha:</td>
+				<td width="550"><input type="password" name="senha" id="pwdSenha" size="30"></td>
+			</tr>
+			
+			<tr>
+				<td width="250">Receber Promoções</td>
+				<td width="550">				
+				<input type="checkbox" name="promocao" id="ckbSim" value="Receber_Promocao" checked onmousedown="stopMail()"/>Sim<br />
+				<input type="checkbox" name="promocao" id="ckbNao" value="Nao_Receber_Promocao" />Não<br />
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="250">Obs:</td>
+				<td width="550"><textarea rows="8" cols="70" name="Obs" id="txaObs" onkeyup="maiusculas()"></textarea></td>
+			</tr>
+			
+			<tr>
+			<td width="250"></td>
+				<td width="550">
+				<button type="button" onclick="validar()">Enviar</button>
+				<button type="button">Valores</button>
+				</td>
+	
+			</tr>
+		</table>	
+	</body>
+</html>
