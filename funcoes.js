@@ -1,5 +1,7 @@
 function validar(){
 
+	
+
 	/*Verificando se deseja receber promoção*/
 	var sim = document.getElementById("ckbSim").checked
 	var nao = document.getElementById("ckbNao").checked
@@ -31,12 +33,12 @@ function validar(){
 			nao = "Não Desejo receber promoções"
 			alert(cpf + "\n" + nome + "\n" + endereco + "\n" + cidade + "\n" + sexo + "\n" + telefone + "\n" + email + "\n" + senha + "\n" + nao + "\n" + obs)
 		}
-	}else{
-		alert("Campo inválido em (RECEBER PROMOÇÕES) selecione apenas uma opção.")
+		}else{
+			alert("Campo inválido em (RECEBER PROMOÇÕES) selecione apenas uma opção.")
+			}
+		}else{
+			alert("Escolha o seu sexo.")
 		}
-	}else{
-		alert("Escolha o seu sexo.")
-	}
 }
 
 function maiusculas()
@@ -49,8 +51,11 @@ function maiusculas()
     document.getElementById("txtCidade").value = cidade.toUpperCase();
     var obs = document.getElementById("txaObs").value;
     document.getElementById("txaObs").value = obs.toUpperCase();
-    
+}
 
+function minusculas(){
+    var email = document.getElementById("email").value;
+    document.getElementById("email").value = email.toLowerCase();
 }
 
 function soLetras(){
@@ -77,13 +82,49 @@ function soNumero(){
 	}
 }
 
-function validarSenha(){
-     var senha = getElementById(pwdSenha)
+/*Verifica se alguma coisa foi digitada no campo email*/
+function verificaCamposEmail() {
+  if (document.forms[0].txtEmail.value.length == 0) {
+  	alert("Por favor, informe o seu Email.");	
+    return false;
+  }
+  	return true;
+	}
+/*Verifica se o padrão com @ e ao menos um ponto foi usado corretamente.*/
+function checarEmail(){
+	if( document.forms[0].email.value=="" || document.forms[0].email.value.indexOf('@')==-1
+		|| document.forms[0].email.value.indexOf('.')==-1 )
+		{
+			alert( "Por favor, informe um E-MAIL válido!" );
+			return false;
+		}
+	}
 
-	if((senha == null) || (senha.value < 5)){
-		
-	}	
+/*Contado caracteres no Text Area - OBSERVAÇÕES*/
+function contarCaracter(){
+	var totalcaracter = document.getElementById("txaObs").value.length
+	if(totalcaracter <=200){
+		return true;
+	}else{
+		alert("Você digitou:" + totalcaracter + "\n" + "O maximo permitido é 200.");
+	}
 }
 
+/**Verifica se SENHA contem campos em branco*/
+function checarSenha(){
+var validSenha =  document.getElementById("pwdSenha").value
+if((validSenha.value == '') || (validSenha.length < 6)){
+alert( "Não inserir 'ESPAÇOS EM BRANCO' e inserir no mínimo '6 CARACTERES'." );
+return false;
+}
+return true;
+}
 
-
+function msgReceberPromo(){
+	var sim = document.getElementById("ckbSim").checked
+	if(sim == document.getElementById.options){
+		alert("testo 2")
+	}else{
+		alert("texto aqui")
+	}
+}

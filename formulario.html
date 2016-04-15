@@ -52,32 +52,35 @@
 			
 			<tr>
 				<td width="250">E-mail(Login)</td>
-				<td width="550"><input type="mail" name="email" id="txtEmail" size="70"></td>
+				<td width="550">
+				<form method="post" action="" onSubmit="return verificaCamposEmail()" name="frmEnvia">
+				<input name="email" type="text" class="input" id="txtEmail" size="70" onkeypress="return minusculas()" onblur="checarEmail();" />
+				</form>				
 			</tr>
 			
 			<tr>
 				<td width="250">Senha:</td>
-				<td width="550"><input type="password" name="senha" id="pwdSenha" size="30"></td>
+				<td width="550"><input type="password" name="senha" id="pwdSenha" size="30" onblur="checarSenha()"></td>
 			</tr>
 			
 			<tr>
 				<td width="250">Receber Promoções</td>
 				<td width="550">				
-				<input type="checkbox" name="promocao" id="ckbSim" value="Receber_Promocao" checked onmousedown="stopMail()"/>Sim<br />
+				<input type="checkbox" name="promocao" id="ckbSim" value="Receber_Promocao" checked onmousedown="msgReceberPromo()" />Sim<br />
 				<input type="checkbox" name="promocao" id="ckbNao" value="Nao_Receber_Promocao" />Não<br />
 				</td>
 			</tr>
 			
 			<tr>
 				<td width="250">Obs:</td>
-				<td width="550"><textarea rows="8" cols="70" name="Obs" id="txaObs" onkeyup="maiusculas()"></textarea></td>
+				<td width="550"><textarea rows="8" cols="70" name="Obs" id="txaObs" onkeyup="maiusculas()" onblur="contarCaracter()"></textarea></td>
 			</tr>
 			
 			<tr>
 			<td width="250"></td>
 				<td width="550">
 				<button type="button" onclick="validar()">Enviar</button>
-				<button type="button">Valores</button>
+				<button type="button" onclick="validar()">Valores</button>
 				</td>
 	
 			</tr>
